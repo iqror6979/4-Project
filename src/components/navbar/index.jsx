@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -22,6 +22,9 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import navbar from "../../assets/navbar.jpg";
 
 export default () => {
+
+  const [isScroll, setIsScroll] = React.useState(false);
+
   const navLinkStyles = ({ isActive }) => {
     return {
       color: isActive ? "blue" : "black",
@@ -30,21 +33,31 @@ export default () => {
     };
   };
 
+  React.useEffect(() => {
+    window.onscroll = () => {
+      if (window.scrollY >= 220) {
+        setIsScroll(true);
+      } else {
+        setIsScroll(false);
+      }
+    };
+  }, []);
+
   return (
     <Box
       sx={{
         width: "100%",
-        // position: 'sticky',
-        // top:0,
+        position: 'relative',
+        top:0,
         zIndex: 10,
       }}
     >
       <Box
         sx={{
+          display: isScroll ? 'none' :  "flex ",
           backgroundColor: "#333",
           paddingTop: "7px",
           paddingBottom: "7px",
-          display: "flex ",
           alignItems: "center",
           justifyContent: "space-between",
         }}
@@ -70,8 +83,15 @@ export default () => {
         </Box>
       </Box>
       <Box
+      position="fixed"
         sx={{
-          backgroundColor: "#fff",
+          backgroundColor:  isScroll ? 'white' : 'transparent',
+          // top: isScroll ? '0px' : '30px' ,
+          transition: ".3s",
+          transitionProperty: "all",
+          transitionDuration: "0.3s",
+          transitionTimingFunction: "ease",
+          transitionDelay: "0s",
           paddingTop: "20px",
           paddingBottom: "20px",
           display: "flex",
