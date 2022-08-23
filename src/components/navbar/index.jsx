@@ -53,36 +53,6 @@ export default () => {
       }}
     >
       <Box
-        sx={{
-          display: isScroll ? 'none' :  "flex ",
-          backgroundColor: "#333",
-          paddingTop: "7px",
-          paddingBottom: "7px",
-          alignItems: "center",
-          justifyContent: "space-between",
-        }}
-      >
-        <Box>
-          <h6
-            style={{
-              color: "white",
-              fontFamily: "Sen, sans-serif",
-              fontSize: "13px",
-              paddingLeft: "30%",
-              width: "100%",
-            }}
-          >
-            Free shipping for standard order over $100
-          </h6>
-        </Box>
-        <Box sx={{ pr: "3%", pt: "2px" }}>
-          <FaFacebookF style={{ padding: "0px 10px", color: "white" }} />
-          <BsTwitter style={{ padding: "0px 10px", color: "white" }} />
-          <FiInstagram style={{ padding: "0px 10px", color: "white" }} />
-          <GrDribbble style={{ padding: "0px 10px", color: "white" }} />
-        </Box>
-      </Box>
-      <Box
       position="fixed"
         sx={{
           backgroundColor:  isScroll ? 'white' : 'transparent',
