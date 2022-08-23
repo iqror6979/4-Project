@@ -6,6 +6,7 @@ import Shop from '../pages/shop';
 import Features from '../pages/features';
 import Blog from '../pages/blog';
 import About from '../pages/about';
+import Contact from '../pages/contact';
 
 export const routes = [
   {
@@ -16,6 +17,7 @@ export const routes = [
       { path: '/features', element: <Features/> },
       { path: '/blog', element: <Blog/> },
       { path: '/about', element: <About/> },
+      { path: '/contact', element: <Contact/> },
       { path: '*', element: <Navigate to='/' /> },
     ],
   },
